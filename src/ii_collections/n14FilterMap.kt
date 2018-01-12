@@ -13,6 +13,9 @@ fun Shop.getCitiesCustomersAreFrom(): Set<City> {
     var cities = mutableSetOf<City>()
     customers.forEach { cities.add(it.city) }
     return cities
+
+    // Nota: estaba resuelto mucho mejor en la rama de resolutions con:
+    //return customers.map { it.city }.toSet()
 }
 
 fun Shop.getCustomersFrom(city: City): List<Customer> {
